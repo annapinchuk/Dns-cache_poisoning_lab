@@ -58,9 +58,12 @@ void send_dns_response(char *name, unsigned char *ip_resp, int n_resp, unsigned 
 {
   // Modify the name in the answer field (offset=64)
   memcpy(ip_resp + 64, name, 5);
+  // Modify the name in the answer field (offset=41)
+  memcpy(ip_resp + 41, name, 5);
   // Modify the transaction ID field (offset=28)
   unsigned short id_net_order = htons(id);
   memcpy(ip_resp + 28, &id_net_order, 2);
+  send_raw_packet(ip_resp, n_resp);
 }
 
 /* Send the raw packet out
