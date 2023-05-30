@@ -16,6 +16,9 @@ int main()
   // reset the id
   unsigned short id = 0;
 
+  long counter =0;
+  printf("Starting the attack\n");
+
   while (1)
   {
     // Generate a random name with length 5
@@ -38,6 +41,8 @@ int main()
     }
     // ##################################################################
   }
+  counter++;
+  printf("Sent %ld query dns packets, and %ld response dns packets\n", counter, counter*200);
 }
 
 /* Use for sending DNS request.
