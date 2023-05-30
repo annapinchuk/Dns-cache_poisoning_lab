@@ -24,7 +24,8 @@ services:
                 ipv4_address: 10.9.0.5
 
     attacker:
-        image: handsonsecurity/seed-ubuntu:large 
+        # image: handsonsecurity/seed-ubuntu:large 
+        image: gcc:bullseye
         container_name: seed-attacker
         tty: true
         cap_add:
