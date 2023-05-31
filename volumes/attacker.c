@@ -44,6 +44,7 @@ int main()
         // ##################################################################
         counter++;
         printf("Sent %ld query dns packets, and %ld response dns packets\n", counter, counter * 200);
+
     }
 }
 
