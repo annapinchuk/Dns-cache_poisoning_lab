@@ -14,7 +14,7 @@ dns = DNS(id=0xAAAA, aa=1, rd=0, cd=0, qr=1,
           qdcount=1, ancount=1, nscount=1, arcount=0,
           qd=Qdsec, an=Anssec, ns=NSsec)
 # Construct the IP, UDP headers, and the entire packet
-ip = IP(dst='10.0.9.53', src='199.43.135.53', chksum=0)
+ip = IP(dst='10.9.0.53', src='199.43.135.53', chksum=0)
 udp = UDP(dport=33333, sport=53, chksum=0)
 pkt = ip/udp/dns
 # Save the packet to a file
