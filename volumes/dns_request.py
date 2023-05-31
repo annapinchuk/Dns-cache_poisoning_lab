@@ -2,8 +2,7 @@ from scapy.all import DNSQR, DNS, IP, UDP
 
 # Construct the DNS header and payload
 Qdsec = DNSQR(qname='start.example.com')
-dns = DNS(id=0xAAAA, qr=0, qdcount=1, ancount=0, nscount=0,
-          arcount=0, qd=Qdsec)
+dns = DNS(id=0xAAAA, qr=0, qdcount=1, qd=Qdsec)
 # Construct the IP, UDP headers, and the entire packet
 ip = IP(dst='10.9.0.53', src='1.1.2.2')
 udp = UDP(dport=53, sport=1234, chksum=0)

