@@ -5,6 +5,10 @@
 
 The objective of this lab is to provide students with a firsthand experience of conducting a remote DNS cache poisoning attack, also known as the Kaminsky DNS attack. The Domain Name System (DNS) is often described as the Internet's phone book, responsible for translating hostnames to IP addresses and vice versa. This translation process, known as DNS resolution, occurs behind the scenes. However, DNS Pharming attacks aim to manipulate this resolution process in various ways, often with the intent of misdirecting users to alternative, and potentially malicious, destinations. This lab specifically focuses on a DNS Pharming attack technique called the DNS Cache Poisoning attack.
 
+| Attack description |
+| :---: |
+| <img src="pics/dns.png" alt="dns" width="700" /> |
+
 In another SEED Lab, we have designed activities to conduct the same attack within a local network environment, where both the attacker and the victim DNS server are on the same network, making packet sniffing possible. In this remote attack lab, packet sniffing is not an option, making the attack significantly more challenging than the local version.
 
 ### Lab Tasks (Description)
